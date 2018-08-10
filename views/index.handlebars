@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col s6">
+    <div class="card-panel amber darken-1">
+      <h4 class="teal-text text-darken-4 flow-text center">Burgers On Deck</h4>
+      <h5 class="teal-text text-darken-4 flow-text center">These burgers are on your list to eat next!</h5>
+
+    </div>
+    <ul class="collection">
+      {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devoured=false}} {{/unless}} {{/each}}
+    </ul>
+  </div>
+  <div class="col s6">
+    <div class="card-panel amber darken-1">
+      <h4 class="teal-text text-darken-4 flow-text center">Burgers Eaten</h4>
+      <h5 class="teal-text text-darken-4 flow-text center">These are the burgers you've already devoured!</h5>
+
+    </div>
+    <ul class="collection">
+      {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=true}} {{/if}} {{/each}}
+    </ul>
+  </div>
+</div>
